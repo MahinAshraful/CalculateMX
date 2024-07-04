@@ -14,6 +14,12 @@ function App() {
 
       if (operation === "add"){
         setOperand("+")
+      } else if (operation === "sub"){
+        setOperand("-")
+      } else if (operation === "mul"){
+        setOperand("*")
+      } else if (operation === "div"){
+        setOperand("/")
       }
   }
 
