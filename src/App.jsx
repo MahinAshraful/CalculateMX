@@ -5,11 +5,16 @@ function App() {
   const [count, setCount] = useState('')
   const [method, setMethod] = useState(null)
   const [value, setValue] = useState(null)
+  const [operand, setOperand] = useState('')
 
   const handleOperation = (operation) =>{
       setValue(count)
       setMethod(operation)
       setCount('')
+
+      if (operation === "add"){
+        setOperand("+")
+      }
   }
 
   const equals = () => {
@@ -22,13 +27,17 @@ function App() {
     } else if (method === 'div'){
       setCount(Number(value) / Number(count))
     }
+
+    setValue(null)
+    setMethod(null)
+    setOperand("")
   } 
 
 
   return (
     <div className="App">
       <div className="calculator">
-        <div className="display">{count}</div>
+        <div className="display">{value}{operand}{count}</div>
         <div className="buttons">
           <button onClick={() => setCount(count + "1")}>1</button>
           <button onClick={() => setCount(count + "2")}>2</button>
