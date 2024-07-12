@@ -76,6 +76,7 @@ function App() {
           <button onClick={equals}>=</button>
         </div>
       </div>
+      <p>Mahin</p>
     </div>
   );
 }
